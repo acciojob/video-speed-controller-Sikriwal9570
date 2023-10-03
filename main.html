@@ -15,6 +15,21 @@
   </div>
 
 <script  src="./script.js">
+	// Get the necessary DOM elements
+const video = document.querySelector('.flex');
+const speed = document.querySelector('.speed');
+const speedBar = document.querySelector('.speed-bar');
+
+// Function to handle speed change
+function handleSpeedChange(e) {
+  const playbackRate = parseFloat(e.target.value);
+  video.playbackRate = playbackRate;
+  speedBar.textContent = playbackRate.toFixed(1) + '×';
+}
+
+// Add event listener to the input element for speed control
+speed.addEventListener('input', handleSpeedChange);
+
   //Your code goes here
 </script>
 </body>
